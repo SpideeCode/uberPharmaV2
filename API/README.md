@@ -1,61 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# UberPharma V2 - API
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://via.placeholder.com/400x200?text=UberPharma+Logo" alt="UberPharma Logo" width="400">
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://github.com/yourusername/uberpharma-v2/actions"><img src="https://github.com/yourusername/uberpharma-v2/workflows/Tests/badge.svg" alt="Build Status"></a>
+  <a href="https://packagist.org/packages/uberpharma/api"><img src="https://img.shields.io/packagist/dt/uberpharma/api" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/uberpharma/api"><img src="https://img.shields.io/packagist/v/uberpharma/api" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/uberpharma/api"><img src="https://img.shields.io/packagist/l/uberpharma/api" alt="License"></a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 À propos d'UberPharma V2
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+UberPharma est une plateforme de livraison de médicaments qui connecte les pharmacies locales aux clients. Cette API RESTful est le backend de l'application UberPharma, alimentant à la fois l'application web et mobile.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Fonctionnalités
 
-## Learning Laravel
+- **🔐 Authentification utilisateur** avec JWT
+- **🏪 Gestion des pharmacies** (CRUD complet)
+- **💊 Catalogue de produits** avec recherche et filtrage
+- **🛒 Panier d'achat** persistant
+- **📦 Passer une commande** avec suivi en temps réel
+- **💳 Paiement en ligne** sécurisé
+- **🚚 Livraison** avec suivi du livreur
+- **⭐ Système de notation et d'avis**
+- **🔔 Notifications en temps réel**
+- **📍 Gestion des adresses** avec géolocalisation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📋 Prérequis
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 8.1+
+- Composer 2.0+
+- MySQL 8.0+ / MariaDB 10.4+
+- Node.js 16.x & NPM 8.x
+- Serveur web (Apache/Nginx) avec PHP-FPM
+- Extensions PHP requises: 
+  - BCMath, Ctype, Fileinfo, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠 Installation
 
-## Laravel Sponsors
+1. **Cloner le dépôt**
+   ```bash
+   git clone https://github.com/yourusername/uberpharma-v2.git
+   cd uberpharma-v2/API
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Installer les dépendances**
+   ```bash
+   composer install
+   npm install
+   ```
 
-### Premium Partners
+3. **Configurer l'environnement**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. **Configurer la base de données**
+   - Créer une base de données MySQL/MariaDB
+   - Mettre à jour le fichier `.env` avec les informations de connexion
 
-## Contributing
+5. **Exécuter les migrations et les seeders**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Générer la clé JWT**
+   ```bash
+   php artisan jwt:secret
+   ```
 
-## Code of Conduct
+7. **Configurer le stockage**
+   ```bash
+   php artisan storage:link
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. **Démarrer le serveur**
+   ```bash
+   php artisan serve
+   ```
 
-## Security Vulnerabilities
+L'API sera disponible à l'adresse : http://localhost:8000/api
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📚 Documentation
 
-## License
+La documentation complète de l'API est disponible dans le dossier [docs/API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md).
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🧪 Développement
+
+### Lancer les tests
+```bash
+php artisan test
+```
+
+### Générer la documentation Swagger/OpenAPI
+```bash
+php artisan l5-swagger:generate
+```
+
+### Lancer l'analyse de code
+```bash
+composer check
+```
+
+## 🔒 Sécurité
+
+Si vous découvrez une vulnérabilité de sécurité, veuillez envoyer un e-mail à `security@uberpharma.com`. Toutes les vulnérabilités de sécurité seront traitées rapidement.
+
+## 📄 Licence
+
+Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT).
